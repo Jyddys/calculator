@@ -25,19 +25,26 @@ function divide(num1,num2) {
 
 
 // Operator
-function operate(num1,num2) {
-  let userInput = prompt("+ - / or *");
-  num1 = parseInt(prompt("Enter value"));
-  num2 = parseInt(prompt("Enter 2 value"));
+function operate(userInput) {
+  userInput = prompt("+ - / or *");
+  let num1 = parseInt(prompt("Enter value"));
+  let num2 = parseInt(prompt("Enter 2 value"));
   if(userInput == "+") {
-    add(num1,num2)
+    return add(num1,num2)
   } else if(userInput == "-") {
-    sub(num1,num2)
+    return sub(num1,num2)
   } else if(userInput == "/") {
-    divide(num1,num2)
+    return divide(num1,num2)
   } else if(userInput == "*" ) {
-    multiply(num1,num2)
+    return multiply(num1,num2)
+  } else {
+    console.log(null);
+    return "YRITÄ UUDELLEEN"
   }
 }
-let display = document.getElementById('display')
-display.innerHTML = operate();
+
+const btn = document.getElementById("display");
+btn.addEventListener('click', () => {
+  alert("hello");
+});
+
